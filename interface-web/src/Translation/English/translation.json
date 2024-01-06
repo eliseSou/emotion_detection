@@ -1,7 +1,8 @@
 {
     "welcome": {
-        "title": "Welcome on Emoticall web interface !",
-        "language": "The selected language is : "
+        "titleBefore": "Welcome on ",
+        "titleAfter": " web interface !",
+        "footer": "Created by Marie DOUET, Brice GRINDEL, Lucas MARTIN & Élise SOUVANNAVONG"
     },
     "selection": {
         "language": "Select the language"
