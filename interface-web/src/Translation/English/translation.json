@@ -2,5 +2,8 @@
     "welcome": {
         "title": "Welcome on Emoticall web interface !",
         "language": "The selected language is : "
+    },
+    "selection": {
+        "language": "Select the language"
     }
 }
