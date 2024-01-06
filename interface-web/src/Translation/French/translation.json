@@ -5,5 +5,17 @@
     },
     "selection": {
         "language": "Sélectionnez la langue"
+    },
+    "emotion": {
+        "detected": "L'émotion détectée est : ",
+        "list": {
+            "anger": "la Colère",
+            "disgust": "le Dégoût",
+            "joy": "la Joie",
+            "neutral": "Neutre",
+            "fear": "la Peur",
+            "surprise": "la Surprise",
+            "sadness": "la Tristesse"
+        }
     }
 }

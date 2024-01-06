@@ -16,7 +16,7 @@ export enum EmotionsList {
   'sadness'
 }
 
-export const Emotions = {
+export const EmotionsEmoticon = {
     ANGER: linkAnger,
     DISGUST: linkDisgust,
     JOY: linkJoy,
@@ -25,34 +25,3 @@ export const Emotions = {
     SURPRISE: linkSurprise,
     SADNESS: linkSadness,
   } as const;
-
-// export const Emotions = [
-//   {
-//     value: linkAnger,
-//     label: 'anger',
-//   },
-//   {
-//     value: linkDisgust,
-//     label: 'anger',
-//   },
-//   {
-//     value: linkJoy,
-//     label: 'joy',
-//   },
-//   {
-//     value: linkNeutral,
-//     label: 'neutral',
-//   },
-//   {
-//     value: linkFear,
-//     label: 'fear',
-//   },
-//   {
-//     value: linkSurprise,
-//     label: 'surprise',
-//   },
-//   {
-//     value: linkSadness,
-//     label: 'sadness',
-//   },
-// ] as const;

@@ -1,12 +1,11 @@
 import './App.css'
 import { useState } from 'react';
 import { useTranslation } from "react-i18next";
-import { Image, Text, Stack, useToast, HStack, VStack } from "@chakra-ui/react";
-import { EmotionsList, Emotions } from './constantsEmotions';
+import { Image, Text, Stack, HStack, VStack } from "@chakra-ui/react";
+import { EmotionsList, EmotionsEmoticon } from './constantsEmotions';
 
 function App() {
   const { t, i18n } = useTranslation();
-  const toast = useToast();
 
   const onClickLanguageChange = (e: any) => {
     const language = e.target.value;
@@ -19,42 +18,54 @@ function App() {
     setLanguage(e.target.value)
   }
 
-  const changeEmotion = (emotion: String) => {
+  const detectedEmotion = 'fear'
+
+  const emoticonEmotion = (emotion: String) => {
     switch (emotion) {
       case EmotionsList[0]:
-        return Emotions.ANGER;
+        return EmotionsEmoticon.ANGER;
       case EmotionsList[1]:
-        return Emotions.DISGUST;
+        return EmotionsEmoticon.DISGUST;
       case EmotionsList[2]:
-        return Emotions.JOY;
+        return EmotionsEmoticon.JOY;
       case EmotionsList[3]:
-        return Emotions.NEUTRAL;
+        return EmotionsEmoticon.NEUTRAL;
       case EmotionsList[4]:
-        return Emotions.FEAR;
+        return EmotionsEmoticon.FEAR;
       case EmotionsList[5]:
-        return Emotions.SURPRISE;
+        return EmotionsEmoticon.SURPRISE;
       case EmotionsList[6]:
-        return Emotions.SADNESS;
+        return EmotionsEmoticon.SADNESS;
     }
   }
 
-  const srcEmotion = changeEmotion('joy');
+  const srcEmotion = emoticonEmotion(detectedEmotion);
 
   return (
-    <Stack className="App" height="100vh" bg="#2b2d31" textColor="white">
+    <Stack className='App'>
       <Stack margin={25}>
 
         <HStack justifyContent="space-between">
           <Stack></Stack>
 
-          <VStack justifyContent='center'>
-            <Text width="80vw" fontSize={30}>
+          <VStack justifyContent='center' width="95vw">
+            <Text marginTop='2vh' marginBottom='10vh' fontSize={35}>
               {t('welcome.title')}
             </Text>
-            <Image width={500} height={500} borderRadius={10} marginTop='10vh' src={srcEmotion} />
+            <VStack bg='#383b40' padding='5vh' borderRadius={30}>
+              <Image width={500} height={500} marginBottom='2vh' src={srcEmotion} />
+              <Text fontSize={20}>{t('emotion.detected')}</Text>
+              <Text fontSize={30}>{t('emotion.list.' + `${detectedEmotion}`)}</Text>
+            </VStack>
+
+            <Stack className='Footer' alignSelf='center'>
+              <Text fontSize="sm">
+                &copy; {new Date().getFullYear()} Created by Marie DOUET, Brice GRINDEL, Lucas MARTIN & Élise SOUVANNAVONG
+              </Text>
+            </Stack>
           </VStack>
 
-          <VStack width="15vw" alignSelf='flex-start'>
+          <VStack width="200px" alignSelf='flex-start'>
             <Text>{t('selection.language')}</Text>
             <HStack onChange={onClickLanguageChange} spacing={25}>
               <VStack><input type="radio" name="language" value="fr" checked={language === "fr"} onChange={onOptionChange} />
@@ -65,8 +76,10 @@ function App() {
               </VStack>
             </HStack>
           </VStack>
-
         </HStack>
+
+
+
       </Stack >
     </Stack>
   );
