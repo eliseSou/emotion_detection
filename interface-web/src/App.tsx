@@ -1,7 +1,7 @@
 import './App.css'
 import { useState } from 'react';
 import { useTranslation } from "react-i18next";
-import { Image, Text, Stack, HStack, VStack, color } from "@chakra-ui/react";
+import { Image, Text, Stack, HStack, VStack, color, Button } from "@chakra-ui/react";
 import { EmotionsList, EmotionsEmoticon } from './constantsEmotions';
 
 function App() {
@@ -18,6 +18,10 @@ function App() {
     setLanguage(e.target.value)
   }
 
+  const refresh = () => {
+    window.location.reload();
+  }
+  
   const detectedEmotion = 'fear'
 
   const emoticonEmotion = (emotion: String) => {
@@ -67,6 +71,9 @@ function App() {
                 {t('emotion.list.' + `${detectedEmotion}`)}
               </Text>
             </VStack>
+            <Button onClick={refresh} bgGradient='linear(to-r, #FFB286, #FF0080)' color='white' marginTop='2vh'>
+              {t('emotion.reload')}
+            </Button>
 
             <Stack className='Footer' alignSelf='center'>
               <Text fontSize="sm">

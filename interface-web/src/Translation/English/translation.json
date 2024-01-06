@@ -17,6 +17,7 @@
             "fear": "Fear",
             "surprise": "Surprise",
             "sadness": "Sadness"
-        }
+        },
+        "reload": "Reload"
     }
 }

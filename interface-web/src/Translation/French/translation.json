@@ -17,6 +17,7 @@
             "fear": "la Peur",
             "surprise": "la Surprise",
             "sadness": "la Tristesse"
-        }
+        },
+        "reload": "Actualiser"
     }
 }
