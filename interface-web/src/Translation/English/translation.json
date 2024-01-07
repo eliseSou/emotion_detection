@@ -1,0 +1,23 @@
+{
+    "welcome": {
+        "titleBefore": "Welcome on ",
+        "titleAfter": " web interface !",
+        "footer": "Created by Marie DOUET, Brice GRINDEL, Lucas MARTIN & Élise SOUVANNAVONG"
+    },
+    "selection": {
+        "language": "Select the language"
+    },
+    "emotion": {
+        "detected": "The detected emotion is : ",
+        "list": {
+            "anger": "Anger",
+            "disgust": "Disgust",
+            "joy": "Joy",
+            "neutral": "Neutral",
+            "fear": "Fear",
+            "surprise": "Surprise",
+            "sadness": "Sadness"
+        },
+        "reload": "Reload"
+    }
+}
