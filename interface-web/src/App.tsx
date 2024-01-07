@@ -1,8 +1,8 @@
 import './App.css'
 import { useState } from 'react';
 import { useTranslation } from "react-i18next";
-import { Image, Text, Stack, HStack, VStack, color, Button } from "@chakra-ui/react";
-import { EmotionsList, EmotionsEmoticon } from './constantsEmotions';
+import { Image, Text, Stack, HStack, VStack } from "@chakra-ui/react";
+import CardEmotion from './Components/CardEmotion';
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -17,33 +17,6 @@ function App() {
   const onOptionChange = (e: any) => {
     setLanguage(e.target.value)
   }
-
-  const refresh = () => {
-    window.location.reload();
-  }
-  
-  const detectedEmotion = 'fear'
-
-  const emoticonEmotion = (emotion: String) => {
-    switch (emotion) {
-      case EmotionsList[0]:
-        return EmotionsEmoticon.ANGER;
-      case EmotionsList[1]:
-        return EmotionsEmoticon.DISGUST;
-      case EmotionsList[2]:
-        return EmotionsEmoticon.JOY;
-      case EmotionsList[3]:
-        return EmotionsEmoticon.NEUTRAL;
-      case EmotionsList[4]:
-        return EmotionsEmoticon.FEAR;
-      case EmotionsList[5]:
-        return EmotionsEmoticon.SURPRISE;
-      case EmotionsList[6]:
-        return EmotionsEmoticon.SADNESS;
-    }
-  }
-
-  const srcEmotion = emoticonEmotion(detectedEmotion);
 
   return (
     <Stack className='App'>
@@ -64,16 +37,8 @@ function App() {
                 {t('welcome.titleAfter')}
               </Text>
             </HStack>
-            <VStack bg='#383b40' padding='5vh' borderRadius={30}>
-              <Image width={500} height={500} marginBottom='2vh' src={srcEmotion} />
-              <Text fontSize={25}>{t('emotion.detected')}</Text>
-              <Text fontSize={35} bgGradient='linear(to-r, #FFB286, #FF0080)' bgClip='text' fontWeight='extrabold'>
-                {t('emotion.list.' + `${detectedEmotion}`)}
-              </Text>
-            </VStack>
-            <Button onClick={refresh} bgGradient='linear(to-r, #FFB286, #FF0080)' color='white' marginTop='2vh'>
-              {t('emotion.reload')}
-            </Button>
+
+            <CardEmotion/>
 
             <Stack className='Footer' alignSelf='center'>
               <Text fontSize="sm">
