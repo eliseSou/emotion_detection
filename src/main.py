@@ -16,12 +16,15 @@ def apply_model():
     pass
 
 def send_results(prediction):
-    URL = "http://127.0.0.1/emotion"
-    r = requests.post(url=URL, data=prediction)*
-    print(r)
+    URL = "http://127.0.0.1:3002/emotion"
+    emotion = {"emotion": prediction}
+
+    r = requests.post(url=URL, data=emotion)
+
+    print(r.status_code, r.text)
 
 
-prediction = "sad"
+prediction = "anger"
 
 
 """ voice_extract = get_voice_extract()
