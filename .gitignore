@@ -22,3 +22,4 @@ src/data_samples
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+assets/data_samples
