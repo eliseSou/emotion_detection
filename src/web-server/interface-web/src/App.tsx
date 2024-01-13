@@ -26,17 +26,19 @@ function App() {
           <Stack></Stack>
 
           <VStack justifyContent='center' width="95vw">
-            <HStack marginTop='2vh' marginBottom='10vh' fontSize={35}>
+            <Stack marginTop='2vh' marginBottom='10vh' fontSize={35} alignItems='center' > 
               <Text>
                 {t('welcome.titleBefore')}
               </Text>
-              <Text bgGradient='linear(to-r, #FFB286, #FF0080)' bgClip='text' fontWeight='extrabold'>
-                Emoticall
-              </Text>
-              <Text>
-                {t('welcome.titleAfter')}
-              </Text>
-            </HStack>
+              <HStack>
+                <Text bgGradient='linear(to-r, #FFB286, #FF0080)' bgClip='text' fontWeight='extrabold'>
+                  Emoticall
+                </Text>
+                <Text>
+                  {t('welcome.titleAfter')}
+                </Text>
+              </HStack>
+            </Stack>
 
             <CardEmotion/>
 
@@ -59,8 +61,6 @@ function App() {
             </HStack>
           </VStack>
         </HStack>
-
-
 
       </Stack >
     </Stack>

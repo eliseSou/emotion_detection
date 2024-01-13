@@ -10,24 +10,24 @@ const CardEmotion = () => {
         window.location.reload();
     }
 
-    // const emotion = 'joy'   /* À décommenter pour tester la page sans fetch l'émotion */
-
-    /* Bloc à commenter pour tester la page sans fetch l'émotion */
     const [emotion, setEmotion] = useState('');
+
     useEffect(() => {
-        fetch("http://127.0.0.1:3002/emotion")
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    try {
-                        setEmotion(result["emotion"]);
-                    } catch (e) {
-                        throw new Error("Request object result has no 'emotion' key")
+        const interval = setInterval(() => {
+            fetch("http://127.0.0.1:3002/emotion")
+                .then(res => res.json())
+                .then(
+                    (result) => {
+                        try {
+                            setEmotion(result["emotion"]);
+                        } catch (e) {
+                            throw new Error("Request object result has no 'emotion' key")
+                        }
                     }
-                }
-            )
-    })
-    /* ---------------------------------------------------------- */
+                )
+        }, 4000);
+        return () => clearInterval(interval);
+    }, []);
 
     const emoticonEmotion = (emotion: String) => {
         switch (emotion) {
