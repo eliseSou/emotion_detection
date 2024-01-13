@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+  background-color: #2b2d31;
+  color: white;
+  min-height: 100vh;
+}
+
+.Footer {
+  position: absolute;
+  bottom: 0;
+}
