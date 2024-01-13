@@ -1,22 +1,35 @@
-# emotion_detection
-The goal is to detect emotion in a vocal flux from Discord and to display the detected emotion. 
+# Détection d'émotions dasn la voix
+Ce projet a été réalisé dans le cadre du cours d'Interaction Homme-Machines Evoluées (IHME), dispensé à l'INSA Rouen Normandie, par DOUET Marie, GRINDEL Brice, MARTIN Lucas et SOUVANNAVONG Elise. 
 
-## Dataset pris pour le benchmark 
+Il se base notamment sur les synthèses bibliographiques suivantes :
+- Reconnaissance d’émotions dans la voix, IMBERT Alexis et MARTIN Lucas, 21 novembre 2023
+- Détection et synthèse (visuelle et sonore) d’émotions, LUYPAERT Pierre et SOUVANNAVONG Elise, 21 novembre 2023
 
-Savee : https://www.kaggle.com/datasets/ejlok1/surrey-audiovisual-expressed-emotion-savee --> big 6 plus neutre
+## Manuel d'installation
 
-RAVDESS Emotional speech audio : https://www.kaggle.com/datasets/uwrfkaggler/ravdess-emotional-speech-audio --> big 6 plus neutre 
+```bash
 
-EmoReact : demandé
+```
 
-IEMOCAP : https://www.kaggle.com/datasets/samuelsamsudinng/iemocap-emotion-speech-database
+## Manuel utilisateur
 
-EmoDB : on ne prend pas car ce sont pas les bonnes émotions
+```bash
 
-Emovo : https://dagshub.com/kingabzpro/EMOVO --> big 6 plus neutre
+```
 
-## features qu'on extract 
-F0 mean,  F0 range, Tempo, Voice Quality et loudness. La voice quality se base sur la qualité de l'articulation et si il y a du bruit dans la voix (comme des tremblements) 
+## Rapport
+### Introduction
+<!-- Expliquer comment le problème est attaqué (boîte noire, temps réel, extraits de voix court, ...)-->
 
-prendre en compte le genre ? comment on fait ? idée : faire deux modèle
-si on choisit un dataset avec des émotions qu'on a pas choisit on fait quoi comment ? other ? on les supprime ? 
+### Spécifications
+<!-- Repréciser les specs (<1s de délai, 70% de précision, 60% seuil critique) -->
+
+### Conception
+<!-- Mettre un schéma de la pipeline avec les in/out -->
+
+### Implémentation
+<!-- Expliquer l'implémentation, ce qui a été retenu, pq, comment ça marche, comment les différents parties communiquent entre elles, interfaces, sources des données, ... -->
+
+## Vidéo de démonstration
+
+Une vidéo de démonstration est disponible [ici]()
