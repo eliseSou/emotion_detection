@@ -1,0 +1,23 @@
+{
+    "welcome": {
+        "titleBefore": "Bienvenue sur l'interface web de ",
+        "titleAfter": " !",
+        "footer": "Créé par Marie DOUET, Brice GRINDEL, Lucas MARTIN & Élise SOUVANNAVONG"
+    },
+    "selection": {
+        "language": "Sélectionnez la langue"
+    },
+    "emotion": {
+        "detected": "L'émotion détectée est : ",
+        "list": {
+            "anger": "la Colère",
+            "disgust": "le Dégoût",
+            "joy": "la Joie",
+            "neutral": "Neutre",
+            "fear": "la Peur",
+            "surprise": "la Surprise",
+            "sadness": "la Tristesse"
+        },
+        "reload": "Actualiser"
+    }
+}
