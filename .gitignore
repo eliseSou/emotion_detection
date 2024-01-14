@@ -1,6 +1,9 @@
 src/.ipynb_checkpoints
 assets/data_samples
 src/data_samples
+**.class
+**.jar
+src/bot/config.json
 
 # dependencies
 /node_modules
@@ -23,3 +26,4 @@ src/data_samples
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+assets/data_samples
