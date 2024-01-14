@@ -1,5 +1,7 @@
 src/.ipynb_checkpoints
 src/data_samples
+**.class
+**.jar
 
 # dependencies
 /node_modules

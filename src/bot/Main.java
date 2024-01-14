@@ -16,7 +16,7 @@ import net.dv8tion.jda.api.utils.cache.CacheFlag;
 
 public class Main {
     public static void main(String[] args) {
-        JDABuilder builder = JDABuilder.createDefault("MTE4MTU5ODIyMDc4NzM5NjczMA.GN91rh.kCv7xy79H8Fg4lwz6__6_5rtAyyYYfSnblhdqQ");
+        JDABuilder builder = JDABuilder.createDefault("MTE4MTU5ODIyMDc4NzM5NjczMA.GW_c1q.WJutCWPuRnu_8p4daJAkMLc0Yrjnk-MwExHUro");
 
         // Disable parts of the cache
         builder.disableCache(CacheFlag.MEMBER_OVERRIDES);
