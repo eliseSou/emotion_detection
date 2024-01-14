@@ -5,6 +5,7 @@ import net.dv8tion.jda.api.audio.CombinedAudio;
 import net.dv8tion.jda.api.audio.UserAudio;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;
+import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.entities.channel.concrete.VoiceChannel;
 import net.dv8tion.jda.api.managers.AudioManager;
 
@@ -18,8 +19,10 @@ import java.util.List;
 public class Audio implements AudioReceiveHandler {
     private final AudioManager audioManager;
     private final List<byte[]> audio = new ArrayList<>();
+    private final User user;
 
-    public Audio(Guild g){
+    public Audio(Guild g, User user){
+        this.user = user;
         this.audioManager = g.getAudioManager();
         this.audioManager.setSelfMuted(true);
         this.audioManager.setReceivingHandler(this);
@@ -27,25 +30,27 @@ public class Audio implements AudioReceiveHandler {
 
     @Override
     public boolean canReceiveCombined() {
-        return true;
-    }
-
-    @Override
-    public boolean canReceiveUser() {
         return false;
     }
 
     @Override
-    public void handleCombinedAudio(CombinedAudio combinedAudio){
-        try {
-            audio.add(combinedAudio.getAudioData(1));
-            if(audio.size() >= 200){
-                save();
+    public boolean canReceiveUser() {
+        return true;
+    }
+
+    @Override
+    public void handleUserAudio(UserAudio userAudio){
+        if(userAudio.getUser().equals(this.user)){
+            try {
+                audio.add(userAudio.getAudioData(1));
+                if(audio.size() >= 200){
+                    save();
+                }
+            }catch (OutOfMemoryError e) {
+                //close connection
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
-        }catch (OutOfMemoryError e) {
-            //close connection
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
     }
 
