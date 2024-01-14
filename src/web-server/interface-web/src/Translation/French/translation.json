@@ -10,13 +10,13 @@
     "emotion": {
         "detected": "L'émotion détectée est : ",
         "list": {
-            "anger": "la Colère",
+            "angry": "la Colère",
             "disgust": "le Dégoût",
-            "joy": "la Joie",
+            "happy": "la Joie",
             "neutral": "Neutre",
-            "fear": "la Peur",
-            "surprise": "la Surprise",
-            "sadness": "la Tristesse"
+            "fearful": "la Peur",
+            "surprised": "la Surprise",
+            "sad": "la Tristesse"
         },
         "reload": "Actualiser"
     }
