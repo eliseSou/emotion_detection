@@ -15,7 +15,7 @@ app.use((req, res, next) => {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var current_emotion = "joy"
+var current_emotion = "happy"
 
 app.use(express.static(path.resolve(__dirname, './interface-web/build')));
 
