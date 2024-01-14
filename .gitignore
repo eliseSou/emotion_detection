@@ -2,6 +2,7 @@ src/.ipynb_checkpoints
 src/data_samples
 **.class
 **.jar
+src/bot/config.json
 
 # dependencies
 /node_modules
