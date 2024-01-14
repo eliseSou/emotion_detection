@@ -32,19 +32,19 @@ const CardEmotion = () => {
     const emoticonEmotion = (emotion: String) => {
         switch (emotion) {
             case EmotionsList[0]:
-                return EmotionsEmoticon.ANGER;
+                return EmotionsEmoticon.ANGRY;
             case EmotionsList[1]:
                 return EmotionsEmoticon.DISGUST;
             case EmotionsList[2]:
-                return EmotionsEmoticon.JOY;
+                return EmotionsEmoticon.HAPPY;
             case EmotionsList[3]:
                 return EmotionsEmoticon.NEUTRAL;
             case EmotionsList[4]:
-                return EmotionsEmoticon.FEAR;
+                return EmotionsEmoticon.FEARFUL;
             case EmotionsList[5]:
-                return EmotionsEmoticon.SURPRISE;
+                return EmotionsEmoticon.SURPRISED;
             case EmotionsList[6]:
-                return EmotionsEmoticon.SADNESS;
+                return EmotionsEmoticon.SAD;
         }
     }
 
