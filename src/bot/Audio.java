@@ -75,7 +75,7 @@ public class Audio implements AudioReceiveHandler {
     public void save() throws IOException {
         List<byte[]> copy = List.copyOf(this.audio);
         this.audio.clear();
-        String fileName = "./discordRecord.wav";
+        String fileName = "discordRecord.wav";
 
         int size=0;
         for (byte[] bs : copy) {
