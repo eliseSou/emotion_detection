@@ -1,4 +1,4 @@
-# Détection d'émotions dasn la voix
+# Détection d'émotions dans la voix
 Ce projet a été réalisé dans le cadre du cours d'Interaction Homme-Machines Evoluées (IHME), dispensé à l'INSA Rouen Normandie, par DOUET Marie, GRINDEL Brice, MARTIN Lucas et SOUVANNAVONG Elise. 
 
 Il se base notamment sur les synthèses bibliographiques suivantes :
@@ -8,7 +8,7 @@ Il se base notamment sur les synthèses bibliographiques suivantes :
 ## Manuel d'installation
 
 1. Cloner le projet
-2. Télécharger l'archive de ressources
+2. Télécharger l'archive de ressources disponible [ici](https://ent.normandie-univ.fr/filex/get?k=Kw6BxBKPYXit7gKgpdi)
 3. Inscrire le token Discord du bot dans `src/bot/config.json`
 4. Mettre le fichier JDA de l'archive ressource dans `jda/`
 5. Mettre le contenu du dossier `data_samples` de l'archive ressource dans `assets/`
