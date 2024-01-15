@@ -80,7 +80,7 @@ Pour ce faire, nous avons fixé des spécifications à notre projet :
 - Sur la base d’une validation humaine, l’objectif est d’atteindre les 70% d’émotions correctement identifiées, avec un seuil critique fixé à 60%.
 - On impose une sortie visuelle catégorielle pour l’affichage de l’émotion.
 - Entre la réception de l’audio émis par le bot discord et l’affichage de l’émotion prédite sur la page web, l’objectif est de rester sous les 500 millisecondes de délai, en admettant un seuil critique à 1 seconde.
-- Pour être le plus proche possible du “temps réel” et faciliter l’expérience utilisateur l’entrée du flux audio doit être continue.
+- Pour être le plus proche possible du “temps réel” et faciliter l’expérience utilisateur, l’entrée du flux audio doit être continue.
 
 ### Conception
 #### Benchmark et Modèle d’apprentissage
@@ -168,6 +168,19 @@ Enfin pour implémenter le module de traduction, nous avons choisi d’utiliser 
 ## Vidéo de démonstration
 
 Une vidéo de démonstration est disponible [ici](https://ent.normandie-univ.fr/filex/get?k=5DguAoOjRRpJ4ocwcMJ)
+
+## Conclusion et Ouverture
+En reprenant les spécifications : 
+- Atteindre les 70% d’émotions correctement identifiées, seuil critique fixé à 60% : Sur les données de test, nous atteignons les 69% de précisions, on peut donc considérer cet objectif comme atteint. Cependant, cela ne se ressent pas dans la réalité : en effet notre projet semble associer à de trop nombreux extraits audios l'émotion "peur", le résultat est donc mitigé.
+- Sortie visuelle catégorielle : Cet objectif est amplement réalisé grâce à l'affichage par smiley, le nom de l'émotion venant en complément.
+- Rester sous les 500 millisecondes de délai, seuil critique à 1 seconde : Le traitement de l'information et la prédiction de l'émotion tournent sous les 100 millisecondes (cf. les logs), toutefois les requêtes de l'interface web n'ont lieu que toutes les 4 secondes. Ainsi notre projet admet un délai allant jusqu'à 4 secondes, durée maximum de la désynchronisation entre l'interface web et l'envoi du flux audio.
+- Flux audio continu : Comme dit précédemment, l'envoi, la réception et le traitement du fichier audio ainsi que la prédiction de l'émotion prennent au total moins de 100 millisecondes, on peut donc considérer qu'il s'agit bien de flux continu.
+
+Pour améliorer notre projet et remplir l'ensemble des spécifications que nous avions établies, plusieurs pistes d'améliorations s'offrent à nous : 
+- Tout d'abord, il pourrait être judicieux de'entraîner le modèle avec des données en plus grande quantité et plus variées, qui se rapprocheraient plus de notre contexte (un appel vocal).
+- Concernant le problème de latence, il faudrait passer le délai maximum des 4 secondes sous la barre des 1 secondes en améliorant la communication entre le script python et le serveur node. Une piste serait de notifier l'application frontend lorsqu'une requête POST a été effectuée et que la variable globale a été mise à jour.
+- Afin d'avoir plus de pertinence sur les émotions prédites, le modèle pourrait être étoffé en se basant non seulement sur l'intonation de la voix, mais aussi sur les mots et la language utilisé.
+
 
 ## Sources
 [1] - https://www.kaggle.com/datasets/uwrfkaggler/ravdess-emotional-speech-audio
